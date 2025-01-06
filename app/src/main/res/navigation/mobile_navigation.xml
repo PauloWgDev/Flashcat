@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/homeFragment_Groups">
+
+
+    <action
+        android:id="@+id/action_global_to_homeFragment_Groups"
+        app:destination="@id/homeFragment_Groups" />
+
+
+    <fragment
+        android:id="@+id/flashcard_list_Fragment"
+        android:name="com.example.ultimate_flashcard_app.ui.flashcard_list.HomeFragment"
+        android:label="@string/menu_flashcards"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_to_flashcardEditFragment"
+            app:destination="@id/flashcardEditFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_homeFragment_Groups"
+            app:destination="@id/homeFragment_Groups" />
+        <argument
+            android:name="groupId"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <action
+            android:id="@+id/action_flashcard_list_Fragment_to_cards_ViewPager_Fragment"
+            app:destination="@id/cards_ViewPager_Fragment" />
+        <action
+            android:id="@+id/action_flashcard_list_Fragment_to_testFragment"
+            app:destination="@id/testFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="com.example.ultimate_flashcard_app.ui.template.TemplatesFragment"
+        android:label="@string/menu_notes"
+        tools:layout="@layout/fragment_templates" >
+        <action
+            android:id="@+id/action_nav_gallery_to_templateEditFragment"
+            app:destination="@id/templateEditFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_tasks"
+        android:name="com.example.ultimate_flashcard_app.ui.slideshow.SlideshowFragment"
+        android:label="@string/menu_task"
+        tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/flashcardEditFragment"
+        android:name="com.example.ultimate_flashcard_app.ui.flashcard_edit.FlashcardEditFragment"
+        android:label="@string/flashcard_edit">
+        <action
+            android:id="@+id/action_flashcardEditFragment_to_nav_home"
+            app:destination="@id/flashcard_list_Fragment" />
+        <argument
+            android:name="flashcard"
+            app:argType="com.example.ultimate_flashcard_app.data.Entities.Flashcard"
+            app:nullable="true" />
+        <argument
+            android:name="groupId"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment_Groups"
+        android:name="com.example.ultimate_flashcard_app.ui.group.HomeFragment_Groups"
+        android:label="@string/menu_groups">
+        <action
+            android:id="@+id/action_homeFragment_Groups_to_nav_home"
+            app:destination="@id/flashcard_list_Fragment" />
+        <action
+            android:id="@+id/action_homeFragment_Groups_to_groupedit_fragment"
+            app:destination="@id/GroupEdit_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/GroupEdit_fragment"
+        android:name="com.example.ultimate_flashcard_app.ui.group_edit.groupedit_fragment"
+        android:label="@string/group_edit">
+        <action
+            android:id="@+id/action_groupedit_fragment_to_nav_home"
+            app:destination="@id/flashcard_list_Fragment" />
+        <action
+            android:id="@+id/action_groupedit_fragment_to_homeFragment_Groups"
+            app:destination="@id/homeFragment_Groups" />
+        <argument
+            android:name="group"
+            app:argType="com.example.ultimate_flashcard_app.data.Entities.FlashcardGroup"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/cards_ViewPager_Fragment"
+        android:name="com.example.ultimate_flashcard_app.ui.viewpagertest.Cards_ViewPager_Fragment"
+        android:label="Flashcards" >
+        <argument
+            android:name="groupId"
+            app:argType="integer" />
+        <argument
+            android:name="flashcardId"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/templateEditFragment"
+        android:name="com.example.ultimate_flashcard_app.ui.template.TemplateEditFragment"
+        android:label="Edit Template" >
+        <action
+            android:id="@+id/action_templateEditFragment_to_nav_gallery"
+            app:destination="@id/nav_gallery" />
+        <argument
+            android:name="template"
+            app:argType="com.example.ultimate_flashcard_app.data.Entities.Template"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/testFragment"
+        android:name="com.example.ultimate_flashcard_app.ui.flashcard_list.TestFragment"
+        android:label="Question" >
+        <action
+            android:id="@+id/action_testFragment_to_flashcard_list_Fragment"
+            app:destination="@id/flashcard_list_Fragment" />
+        <argument
+            android:name="groupId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_testFragment_to_testReviewFragment"
+            app:destination="@id/testReviewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/testReviewFragment"
+        android:name="com.example.ultimate_flashcard_app.ui.flashcard_list.TestReviewFragment"
+        android:label="Test Review" >
+        <action
+            android:id="@+id/action_testReviewFragment_to_flashcard_list_Fragment"
+            app:destination="@id/flashcard_list_Fragment" />
+        <argument
+            android:name="testQuestions"
+            app:argType="com.example.ultimate_flashcard_app.data.Entities.TestQuestion[]" />
+        <argument
+            android:name="groupId"
+            app:argType="integer" />
+        <argument android:name="correctAnswers"
+            app:argType="integer" />
+    </fragment>
+</navigation>

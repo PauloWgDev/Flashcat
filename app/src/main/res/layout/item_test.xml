@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="400dp"
+    android:orientation="vertical"
+    android:elevation="8dp"
+    android:layout_margin="8dp"
+    android:theme="@style/Flashcard_Background">
+
+    <TextView
+        android:id="@+id/questionText"
+        style="@style/TextAppearance.Material3.BodyMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:lines="3"
+        android:text="Is this a Question?"
+        android:textSize="20dp"
+        android:textAlignment="center"/>
+
+    <TextView
+        android:id="@+id/chosenAnswerText"
+        style="@style/TextAppearance.Material3.BodyMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="5dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:lines="5"
+        android:text="option 1 (X)"
+        android:textAlignment="center"/>
+
+    <TextView
+        android:alpha="100"
+        android:id="@+id/correctAnswerText"
+        style="@style/TextAppearance.Material3.BodyMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:lines="5"
+        android:text="option 2 (Correct)"/>
+</LinearLayout>

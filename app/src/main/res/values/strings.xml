@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Flashcats</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Flashcat</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_groups">Home</string>
+    <string name="group_edit">Edit Group</string>
+    <string name="menu_flashcards">Flashcards</string>
+    <string name="flashcard_side1">Side 1</string>
+    <string name="flashcard_side2">Side 2</string>
+    <string name="flashcard_edit">Edit Flashcard</string>
+
+    <string name="menu_notes">Templates</string>
+    <string name="menu_task">Tasks</string>
+
+    <string name="add_new_flashcard_description">New Flashcard</string>
+
+</resources>
